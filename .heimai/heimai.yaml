@@ -1,0 +1,32 @@
+# Moved into .heimai/ by heimai-move, 2026-11-24 (migration-to-heimai.md).
+#   06-sessions/ -> .heimai/06-sessions/
+#   users/ -> .heimai/users/
+#   tasks/ -> .heimai/tasks/
+#   00-decisions.md -> .heimai/00-decisions.md
+#   made: .heimai/01-brief/README.md
+#   made: .heimai/02-impact-map/README.md
+#   heim.yaml -> .heimai/heimai.yaml
+
+heimai: 2  # the format: paths from the Heim's root
+name: My Heim
+description: A Heim made from HeimAI's template; the glass names it when it is made
+kind: private                # private | business | project
+language: en
+
+# Folders: each key's path is from the Heim's root (heimai-yaml.md)
+decisions: .heimai/00-decisions.md
+brief: .heimai/01-brief/
+impact_map: .heimai/02-impact-map/
+users: .heimai/users/
+sessions: .heimai/06-sessions/
+projects: 04-projects/  # one folder per project, each with feature.yaml
+tasks:  # a folder per field, a file per process; the glass reads `- [ ]` lines only from these
+  - .heimai/tasks/inbox.md
+  - .heimai/tasks/**/*.md
+inbox: .heimai/tasks/inbox.md
+
+agents_woken: [idun]  # the agents woken here: the sync copies only these and what they use
+capabilities: {}              # capabilities installed beyond the woken agents' own, by source (heim: [record-anything])
+# inherits:                  # what is copied in, and from where; each copy gets a .source
+#   - from: github:<owner>/HeimAI
+#     take: [agents/heim]

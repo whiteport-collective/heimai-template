@@ -6,7 +6,7 @@ A Heim made from HeimAI's template; the glass names it when it is made
 
 ## Where things are
 
-`heim.yaml` is the floor plan: it says where every folder lies, which agents are woken and what the Heim inherits. Find folders through it, never by a fixed path.
+`.heimai/heimai.yaml` is the floor plan: it says where every folder lies, which agents are woken and what the Heim inherits. Find folders through it, never by a fixed path.
 
 ## Sessions
 
