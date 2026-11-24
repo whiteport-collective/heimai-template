@@ -1,0 +1,21 @@
+heim: 1                       # the floor plan's format; heimai.yaml in .heimai/ replaces it when the Heim is moved
+name: My Heim
+description: A Heim made from HeimAI's template; the glass names it when it is made
+kind: private                # private | business | project
+language: en
+
+heimdocs: .        # where everything the Heim writes lives: "." in a Heim that is its own repo,
+                              # heimdocs/ when the Heim is dropped into an existing project; the paths below are inside it
+people: users/                # one folder per person who works here (the repo cabinet)
+sessions: 06-sessions/        # handovers, per person and agent
+projects: 04-projects/        # one folder per project, each with feature.yaml
+tasks:                        # a folder per field, a file per process; the glass reads `- [ ]` lines only from these
+  - tasks/inbox.md
+  - tasks/**/*.md
+inbox: tasks/inbox.md
+
+agents: [idun]          # the agents woken here: the sync copies only these and what they use
+capabilities: {}              # capabilities installed beyond the woken agents' own, by source (heim: [record-anything])
+# inherits:                  # what is copied in, and from where; each copy gets a .source
+#   - from: github:<owner>/HeimAI
+#     take: [agents/heim]

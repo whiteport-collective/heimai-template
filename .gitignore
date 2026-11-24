@@ -1,0 +1,7 @@
+# The machine's own files: the runner's data and anything that differs per computer. Never in git.
+.heim/
+.heimai/machine/
+# Large files live in cloud storage, never in git.
+*.mp4
+*.mov
+*.wav
