@@ -1,6 +1,7 @@
-# The machine's own files: the runner's data and anything that differs per computer. Never in git.
-.heim/
-.heimai/machine/
+# The machine folder (.heimai/machine/, .heim/ before the move) is in git: the Watchdog commits the
+# runner's timeline there and the glass reads it. Only the note for the owner stays out.
+.heim-notify.txt
+.heimai/machine/notify.txt
 # Large files live in cloud storage, never in git.
 *.mp4
 *.mov

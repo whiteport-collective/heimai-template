@@ -1,0 +1,64 @@
+# The Watchdog: twice a day, whatever else happens, it runs the same runner the Lighthouse agents use,
+# keeps the timeline the glass reads current, and tells the owner (a GitHub issue, which GitHub mails)
+# when the lighthouse has stopped shining. No computer, agent or Paperclip needed.
+#
+# It works with both floor plans: a Heim with `.heimai/heimai.yaml` keeps the runner in
+# `.heimai/machine/runner/`, a Heim with only a root `heim.yaml` keeps it in `.heim/runner/`.
+name: Watchdog
+
+on:
+  schedule:
+    - cron: "0 5 * * *"    # 06:00 in Sweden in winter, 07:00 in summer
+    - cron: "0 15 * * *"   # 16:00 in winter, 17:00 in summer
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: watchdog
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run the processes and update the timeline
+        run: |
+          runner=.heimai/machine/runner/heim-run.mjs
+          [ -f "$runner" ] || runner=.heim/runner/heim-run.mjs
+          node "$runner" --by watchdog
+
+      - name: Tell the owner
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          notify=.heimai/machine/notify.txt
+          [ -f "$notify" ] || notify=.heim-notify.txt
+          [ -s "$notify" ] || exit 0
+          while IFS=$'\t' read -r title text; do
+            [ -n "$title" ] || continue
+            open=$(gh issue list --state open --search "\"$title\" in:title" --json number --jq length)
+            if [ "$open" = "0" ]; then
+              gh issue create --title "$title" --body "$text"$'\n\n'"From the Watchdog, $(date -u '+%Y-%m-%d %H:%M') UTC."
+            fi
+          done < "$notify"
+
+      # The runner changes only process files and its own timelines, in this Heim and in the Heims
+      # inside it, so everything that changed in the checkout is saved, except the note for the owner.
+      # The note is removed, not left out of `git add`: git stops when an excluded path is one
+      # .gitignore already ignores (0.2.1).
+      - name: Save to git
+        run: |
+          git config user.name "The Watchdog"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .heim-notify.txt .heimai/machine/notify.txt
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "watchdog: the timeline, $(date -u '+%Y-%m-%d %H:%M') UTC"
+          git pull --rebase
+          git push

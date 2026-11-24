@@ -19,7 +19,7 @@ brief: .heimai/01-brief/
 impact_map: .heimai/02-impact-map/
 users: .heimai/users/
 sessions: .heimai/06-sessions/
-projects: 04-projects/  # one folder per project, each with feature.yaml
+projects: .heimai/projects/  # one folder per project, each with feature.yaml
 tasks:  # a folder per field, a file per process; the glass reads `- [ ]` lines only from these
   - .heimai/tasks/inbox.md
   - .heimai/tasks/**/*.md
