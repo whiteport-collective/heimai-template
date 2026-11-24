@@ -25,15 +25,31 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      # A template repo is not a Heim: a Heim made from it gets the Watchdog, the template itself
+      # gets no timeline and no commits twice a day (0.2.2). A scheduled run's event carries no
+      # repository, so the API is asked.
+      - name: Is this a template?
+        id: template
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$(gh api "repos/$GITHUB_REPOSITORY" --jq .is_template)" = "true" ]; then
+            echo "A template repo: nothing to run until a Heim is made from it."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/checkout@v4
+        if: steps.template.outputs.skip != 'true'
 
       - name: Run the processes and update the timeline
+        if: steps.template.outputs.skip != 'true'
         run: |
           runner=.heimai/machine/runner/heim-run.mjs
           [ -f "$runner" ] || runner=.heim/runner/heim-run.mjs
           node "$runner" --by watchdog
 
       - name: Tell the owner
+        if: steps.template.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -53,6 +69,7 @@ jobs:
       # The note is removed, not left out of `git add`: git stops when an excluded path is one
       # .gitignore already ignores (0.2.1).
       - name: Save to git
+        if: steps.template.outputs.skip != 'true'
         run: |
           git config user.name "The Watchdog"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
