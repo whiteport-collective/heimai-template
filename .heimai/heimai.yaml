@@ -1,12 +1,3 @@
-# Moved into .heimai/ by heimai-move, 2026-11-24 (migration-to-heimai.md).
-#   06-sessions/ -> .heimai/06-sessions/
-#   users/ -> .heimai/users/
-#   tasks/ -> .heimai/tasks/
-#   00-decisions.md -> .heimai/00-decisions.md
-#   made: .heimai/01-brief/README.md
-#   made: .heimai/02-impact-map/README.md
-#   heim.yaml -> .heimai/heimai.yaml
-
 heimai: 2  # the format: paths from the Heim's root
 name: My Heim
 description: A Heim made from HeimAI's template; the glass names it when it is made
