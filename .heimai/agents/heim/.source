@@ -2,13 +2,13 @@
 # The Heim's changes to it go in agents/heim/customizations/ (never touched by the sync): the same path replaces, additions.md adds.
 # What only this Heim has goes in agents/local/; changes for every Heim go upstream as a pull request.
 generated_by: heim-sync
-source: HeimAI@3da8c5b agents/heim
+source: HeimAI@bed13bb agents/heim
 name: heim
 repo: HeimAI
 path: agents/heim
-commit: 3da8c5b
-branch: release/agents
-version: unreleased
+commit: bed13bb
+branch: main
+version: agents-v0.1.0
 synced: '2026-11-25'
 objects:
   agents:
