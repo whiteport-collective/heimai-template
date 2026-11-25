@@ -16,8 +16,8 @@ tasks:  # a folder per field, a file per process; the glass reads `- [ ]` lines 
   - .heimai/tasks/**/*.md
 inbox: .heimai/tasks/inbox.md
 
-agents_woken: [idun]  # the agents woken here: the sync copies only these and what they use
-capabilities: {}              # capabilities installed beyond the woken agents' own, by source (heim: [record-anything])
+agents_woken: [idun, saga]  # the agents woken here: the sync copies only these and what they use
+capabilities: []             # skills woken without an agent, by name; each is copied with what it uses
 # inherits:                  # what is copied in, and from where; each copy gets a .source
 #   - from: github:<owner>/HeimAI
 #     take: [agents/heim]

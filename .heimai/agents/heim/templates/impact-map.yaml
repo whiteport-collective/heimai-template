@@ -1,0 +1,37 @@
+# The impact map: the content only. The glass draws the map from this file (open-glass FR34), and
+# `impact-map validate` checks it. Change the map here, never in a drawn copy.
+# Everything not yet said by the person is marked: `[needed: …]` for an open question, a status_note
+# or scores_note for Saga's hypotheses. Three goals with three objectives is the default, not a rule.
+project: "{{project}}"
+status: draft                     # draft until the person has agreed the whole map, then agreed
+status_note: "**Draft, workshop 1** (Saga with {{person}}, {{date}})."
+date: "{{date}}"
+vision: "[needed: the vision from the brief, one or two sentences]"
+product: {name: "{{project}}", line: "[needed: the one-line concept]"}
+
+goals:                            # the business goals: what the organization wants to achieve
+- id: G1
+  name: "[needed: the goal in the person's words]"
+  why: "[needed: why it matters to them]"
+  objectives:                     # measurable: each has a target, or `[needed: …]` saying what is missing
+  - {objective: "[needed]", target: "[needed: number and date]", short: "[needed: three to five words]"}
+
+personas:                         # one per workshop; two or three is usual
+- name: "[needed: a first name and a role, alliterative if it helps, e.g. Hanna Hundägare]"
+  priority: primary               # primary or secondary
+  priority_note: "[needed: why this priority]"
+  one_line: "[needed: who they are, in one line]"
+  goals: [G1]                     # the business goals this persona serves, most important first
+  status_note: "**Hypotheses** until confirmed with the person."
+  who: "[needed: their situation]"
+  psychology: "[needed: what drives them]"
+  internal_state: "[needed: how it feels to be them when the problem hits]"
+  usage: {discovery: "[needed]", arrival: "[needed]", behaviour: "[needed]", decision: "[needed]"}
+  forces:                         # three to five each way: needs and fears, never features
+  # f: how often (1-5), i: how strongly (1-5), fit: how well the product can answer it (1-5)
+  - {dir: "+", name: "[needed]", what: "[needed: what they want]", why: "[needed: why]", when: "[needed: when it arises]", f: 3, i: 3, fit: 3}
+  - {dir: "-", name: "[needed]", what: "[needed: what they fear]", why: "[needed: why]", when: "[needed: when it arises]", f: 3, i: 3, fit: 3}
+  goal_links: {G1: "[needed: how this persona serves G1]"}
+  sources: "[needed: where the persona comes from: conversations, research, the brief]"
+
+scores_note: "The scores are Saga's hypotheses until the person has confirmed them."

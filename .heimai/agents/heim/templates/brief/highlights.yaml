@@ -1,0 +1,8 @@
+# What the glass shows in each document's tab (open-glass FR34). One entry per document in the folder,
+# two to four points, each a sentence the person agreed. A document without an entry shows its first
+# paragraph and its headings. image: is optional, relative to this folder.
+01-brief.md:
+  points:
+    - "[needed: the vision in one sentence]"
+    - "[needed: who it is for and why they choose it]"
+    - "[needed: what success is]"

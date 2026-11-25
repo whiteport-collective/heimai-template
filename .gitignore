@@ -6,3 +6,6 @@
 *.mp4
 *.mov
 *.wav
+# Python caches, made when the agents' tools run.
+__pycache__/
+*.pyc

@@ -1,0 +1,170 @@
+# Written by heim-sync. This folder is a copy of the source named below: never edit it.
+# The Heim's changes to it go in agents/heim/customizations/ (never touched by the sync): the same path replaces, additions.md adds.
+# What only this Heim has goes in agents/local/; changes for every Heim go upstream as a pull request.
+generated_by: heim-sync
+source: HeimAI@3da8c5b agents/heim
+name: heim
+repo: HeimAI
+path: agents/heim
+commit: 3da8c5b
+branch: release/agents
+version: unreleased
+synced: '2026-11-25'
+objects:
+  agents:
+  - idun
+  - saga
+  skills:
+  - brief
+  - handover
+  - impact-map
+  - manage-capabilities
+  - onboarding
+  - project-setup
+  - soul-files
+  tools:
+  - brief
+  - capability-catalog
+  - capability-lint
+  - github
+  - handover
+  - handover-audit
+  - heim-floor
+  - heim-scaffold
+  - heim-setup
+  - heim-status
+  - heim-sync
+  - impact-map
+  - machine
+  - project-log
+  - project-scaffold
+  - session-start
+  - source-import
+  - watchdog
+  templates:
+  - brief
+  - handover
+  - heim
+  - ideas
+  - impact-map
+  - project
+  guardrails:
+  - confirm-before-writing
+  - content-not-form
+  - document-before-development
+  - idun-mandate
+  - inventory-before-work
+  - material-before-questions
+  - memory
+  - needs-not-solutions
+  - one-question-at-a-time
+  - proposals-are-marked
+  - visual-authority
+  dependencies:
+  - idun
+  - saga
+files:
+  agents/idun/persona.md: 9365124816b2f872
+  agents/idun/subagents/capability-review.md: eb0ef3db9957ed26
+  agents/saga/persona.md: a83e3131729aec35
+  dependencies/idun.md: 94408fdbb01327a2
+  dependencies/saga.md: c592eaca642434f2
+  guardrails/confirm-before-writing.md: f5c6c3519258b296
+  guardrails/content-not-form.md: a7118de6da249015
+  guardrails/document-before-development.md: 2d19f5d1597636bd
+  guardrails/idun-mandate.md: a87121216458a47d
+  guardrails/inventory-before-work.md: c016e35f43168be9
+  guardrails/material-before-questions.md: 7ac0c5a8cb2139d9
+  guardrails/memory.md: 6d47e6ed207b8643
+  guardrails/needs-not-solutions.md: 0a25e6d0603d13ff
+  guardrails/one-question-at-a-time.md: bcf71c0982808107
+  guardrails/proposals-are-marked.md: cfa01105450b1d4c
+  guardrails/visual-authority.md: fdbfcfc10597de5e
+  skills/brief/SKILL.md: 007604b8360c77e2
+  skills/brief/references/content-and-seo.md: 458dc8e986f9072e
+  skills/brief/references/discovery.md: a3d979ba05c520ca
+  skills/brief/references/existing-material.md: 750a284e9a7c62f3
+  skills/brief/references/visual-direction.md: 4547c08fc6f4920b
+  skills/handover/SKILL.md: 1f914fcec05a73da
+  skills/handover/references/gc-findings.md: 8b2eea3614e88e3d
+  skills/handover/references/soul-review.md: 64730ea4072cd528
+  skills/impact-map/SKILL.md: 1c729a8d53be8123
+  skills/impact-map/references/method.md: f180bbbaa1656568
+  skills/manage-capabilities/SKILL.md: 439456834dd25866
+  skills/manage-capabilities/references/front-matter.md: 38aa09a601b2f349
+  skills/manage-capabilities/references/tool-design.md: 76902aa4fb4b7eca
+  skills/onboarding/SKILL.md: 87c6543675ec7cea
+  skills/onboarding/references/add-person.md: 6cfbb4dd68cdce54
+  skills/onboarding/references/business.md: 42845c3caa551776
+  skills/onboarding/references/new-computer.md: 654862e0f51eb0d9
+  skills/onboarding/references/soul-interview.md: 1687a194f6ce3358
+  skills/project-setup/SKILL.md: f52e7884d6a7ae7a
+  skills/soul-files/SKILL.md: 1b0ace347c4cbb25
+  skills/soul-files/references/sources.md: 39a001be010678ed
+  templates/brief/01-brief.md: dea164311a2bf0f2
+  templates/brief/10-content-language.md: 86935e296e0ef3d1
+  templates/brief/11-visual-direction.md: 3a108cb42b105704
+  templates/brief/20-platform-requirements.md: e5823537b9e1a2d8
+  templates/brief/21-keyword-analysis.md: 65f673ad76677164
+  templates/brief/brand-tone-of-voice.md: 31f23bcb3dcddc58
+  templates/brief/brand-visual-direction.md: 2ac1437bf17fe13c
+  templates/brief/highlights.yaml: 3c644253850a1b52
+  templates/brief/presentation.md: 000c735f416944ab
+  templates/handover/customization.md: d348521aef1f421b
+  templates/handover/personal.md: 6117d8cb60da119c
+  templates/handover/session-lines.md: 8e27299256c10a45
+  templates/handover/session.md: 90140814d80dcd07
+  templates/handover/work.md: 6c7b9be90aaf5b07
+  templates/heim/agents-md.md: 75cf11c41766dd38
+  templates/heim/claude-md.md: 336cc4fbf19beaad
+  templates/heim/decisions.md: 52d5aabe70514dfd
+  templates/heim/gitignore.txt: 587a4dd597379989
+  templates/heim/governance-compliance/policies.md: 5fa44d6423be0e98
+  templates/heim/heim.yaml: cb039990e67ccb22
+  templates/heim/inbox.md: 3d5bacbd57c95d30
+  templates/heim/me.md: ab024eb5caab02e0
+  templates/heim/people-access-map.md: fc00eacd317876dc
+  templates/heim/repo-access-map.md: 86a18ef9b737a0cd
+  templates/heim/sessions-readme.md: 5ce0c31e359205ac
+  templates/heim/users/README.md: ea44b15c533c5249
+  templates/heim/users/_template/objectives.md: 75be5c6272429637
+  templates/heim/users/_template/soul.md: 14d5642d3c0656ab
+  templates/heim/users/_template/user.md: b485ab26aad58682
+  templates/ideas.md: bc0f2ad967825ccc
+  templates/impact-map.yaml: 8cdc7729cbb23410
+  templates/project/00-intake.md: 1a6d94b798fb0c6f
+  templates/project/feature.yaml: bf3875232d4a71b8
+  tools/brief/brief.py: 70a49ef26a5e6d28
+  tools/brief/tool.md: 63990ee6270209ad
+  tools/capability-catalog/catalog.py: 8ea68980a5286278
+  tools/capability-catalog/tool.md: 82cc706ba542b3af
+  tools/capability-lint/lint.py: d0254253b9d743bf
+  tools/capability-lint/tool.md: 6b8823609f471099
+  tools/github/tool.md: 677aeba30528f259
+  tools/handover-audit/audit.py: 5a0045975fc1927f
+  tools/handover-audit/tool.md: 8b746016d355be19
+  tools/handover/handover.py: 444c47c039da998b
+  tools/handover/tool.md: 2913cc233d0a6440
+  tools/heim-floor/floor.py: f2e78797709299cd
+  tools/heim-floor/tool.md: bc7649ac25d7444b
+  tools/heim-scaffold/scaffold.py: f7da861dadb4278c
+  tools/heim-scaffold/tool.md: 2583c48a5b3361f5
+  tools/heim-setup/tool.md: 761f15ba2d7bb134
+  tools/heim-status/status.py: 2cdc6248b42ed322
+  tools/heim-status/tool.md: eb63c56d2cea373f
+  tools/heim-sync/sync.py: b6d0345d6e0cbb86
+  tools/heim-sync/tool.md: 0dfab1d95ba205fd
+  tools/impact-map/tool.md: a392e0346daeacaf
+  tools/impact-map/validate.py: f5a6befc4ff075db
+  tools/machine/machine.py: 5332c7022a3c53f2
+  tools/machine/tool.md: bc1200efe8461f2b
+  tools/project-log/log.py: 3bfbd31b37c3bf98
+  tools/project-log/tool.md: 9698ef03e6b60feb
+  tools/project-scaffold/scaffold.py: 4105b7abb308ed55
+  tools/project-scaffold/tool.md: 4b3c24c644b50413
+  tools/session-start/find.py: e579bfdf24767cf0
+  tools/session-start/tool.md: f6ebd4dfb0e9aada
+  tools/source-import/source_import.py: 4e8851c455c24b75
+  tools/source-import/tool.md: 472437d989c46d42
+  tools/watchdog/tool.md: 4d51d8141a6f5abb
+  tools/watchdog/watchdog.py: e494b28f9b4dd7b5

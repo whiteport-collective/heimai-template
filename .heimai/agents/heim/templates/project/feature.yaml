@@ -1,0 +1,8 @@
+# The project's card: the only place its version and status are written (decisions 21 and 26).
+feature: "{{name}}"
+version: 0.0.0
+status: started                   # started, specified, in progress, released, parked
+what: "{{what}}"
+parts: [01-brief/]                # the folders the project has; more come when the work needs them
+released: no
+next: "{{next}}"
